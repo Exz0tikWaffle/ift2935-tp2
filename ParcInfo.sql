@@ -1,13 +1,13 @@
 BEGIN TRANSACTION;
 
-CREATE TABLE segment (
+CREATE TABLE Segment (
     indIP INT NOT NULL,
     nomSegment VARCHAR(255) NOT NULL,
     etage INT NOT NULL,
     PRIMARY KEY (indIP)
  );
 
- CREATE TABLE salle (
+ CREATE TABLE Salle (
     nSalle INT NOT NULL,
     nomSalle VARCHAR(250) NOT NULL,
     nbPoste INT NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE segment (
     PRIMARY KEY (nSalle)
  );
 
- CREATE TABLE poste (
+ CREATE TABLE Poste (
     nPoste INT NOT NULL,
     nomPoste VARCHAR(250) NOT NULL,
     indIP INT NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE segment (
     PRIMARY KEY (nPoste)
  );
 
-CREATE TABLE logiciel (
+CREATE TABLE Logiciel (
     nLog INT NOT NULL,
     nomLog VARCHAR(255) NOT NULL,
     dateAch DATE NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE logiciel (
     PRIMARY KEY (nLog)
 );
 
-CREATE TABLE installer (
+CREATE TABLE Installer (
     numIns INT IDENTITY(1, 1),
     nPoste INT NOT NULL,
     nLog INT NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE installer (
     PRIMARY KEY (numIns)
 );
 
-CREATE TABLE types (
+CREATE TABLE Types (
     typeLP VARCHAR(255) NOT NULL,
     nomTypes VARCHAR(255) NOT NULL,
     PRIMARY KEY (typeLP)

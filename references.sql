@@ -1,0 +1,11 @@
+begin transaction;
+
+ALTER TABLE Poste ADD FOREIGN KEY (indIP) REFERENCES Segment(indIP);
+ALTER TABLE Poste ADD FOREIGN KEY (typePoste) REFERENCES Types(typeLP);
+ALTER TABLE Poste ADD FOREIGN KEY (nSalle) REFERENCES Salle(nSalle);
+ALTER TABLE Installer ADD FOREIGN KEY (nPoste) REFERENCES Poste(nPoste);
+ALTER TABLE Installer ADD FOREIGN KEY (nLog) REFERENCES Logiciel(nLog);
+ALTER TABLE Logiciel ADD FOREIGN KEY (typeLog) REFERENCES Types(typeLP);
+ALTER TABLE Salle ADD FOREIGN KEY (indIP) REFERENCES Segment(indIP);
+
+commit;

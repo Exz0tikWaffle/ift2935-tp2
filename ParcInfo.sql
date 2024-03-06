@@ -3,7 +3,7 @@ BEGIN TRANSACTION;
 CREATE TABLE Segment (
     indIP INT NOT NULL,
     nomSegment VARCHAR(255) NOT NULL,
-    etage INT NOT NULL,
+    etage INT,
     PRIMARY KEY (indIP)
  );
 
@@ -28,7 +28,7 @@ CREATE TABLE Segment (
 CREATE TABLE Logiciel (
     nLog INT NOT NULL,
     nomLog VARCHAR(255) NOT NULL,
-    dateAch DATE NOT NULL,
+    dateAch DATE,
     versionLog VARCHAR(255) NOT NULL,
     typeLog VARCHAR(255) NOT NULL,
     prix REAL NOT NULL CHECK(prix >= 0),
@@ -36,11 +36,11 @@ CREATE TABLE Logiciel (
 );
 
 CREATE TABLE Installer (
-    numIns INT IDENTITY(1, 1),
+    numIns SERIAL,
     nPoste INT NOT NULL,
     nLog INT NOT NULL,
-    dateIns DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    delai INT NOT NULL,
+    dateIns TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    delai INT,
     PRIMARY KEY (numIns)
 );
 
